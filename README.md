@@ -201,13 +201,16 @@ Le seeder crée une entreprise de démonstration **"United Apparts"** avec les c
 
 ## Vidéo de démonstration
 
-Un script détaillé pour la vidéo de démonstration est disponible dans
+Une vidéo de démonstration de la plateforme (connexion, tableau de bord, clients, factures,
+paiements, documents, chat IA, rapports, prévisions de trésorerie et paramètres) est disponible
+dans [`docs/videos/demo.webm`](docs/videos/demo.webm) — à télécharger et lire localement (formats
+GitHub n'offrent pas de lecteur intégré pour les fichiers du dépôt).
+
+Un script détaillé ayant servi de base à cette vidéo est disponible dans
 [`docs/INOV_Business_Agent_-_Guide_Utilisation_et_Script_Video.pdf`](docs/INOV_Business_Agent_-_Guide_Utilisation_et_Script_Video.pdf).
 
 Un guide complet de fonctionnement de l'application est également disponible dans
 [`docs/INOV_Business_Agent_-_Guide_de_fonctionnement.pdf`](docs/INOV_Business_Agent_-_Guide_de_fonctionnement.pdf).
-
-> La vidéo de démonstration sera ajoutée prochainement.
 
 ## Licence
 
