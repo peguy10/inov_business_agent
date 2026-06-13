@@ -1,0 +1,6 @@
+# Claude Code local settings (may contain tokens/permissions)
+.claude/
+
+# Logs
+debug.log
+*.log

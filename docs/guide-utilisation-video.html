@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    margin: 55px 50px 60px 50px;
+  }
+  body {
+    font-family: "DejaVu Sans", sans-serif;
+    color: #1e293b;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+  .cover {
+    text-align: center;
+    padding-top: 130px;
+  }
+  .cover h1 {
+    font-size: 30px;
+    color: #2563EB;
+    margin-bottom: 6px;
+  }
+  .cover h2 {
+    font-size: 15px;
+    color: #475569;
+    font-weight: normal;
+    margin-top: 0;
+  }
+  .cover .badge {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 8px 20px;
+    background: #0F172A;
+    color: #06B6D4;
+    border-radius: 6px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .cover .meta {
+    margin-top: 160px;
+    font-size: 10px;
+    color: #94a3b8;
+  }
+  h1.section {
+    font-size: 19px;
+    color: #2563EB;
+    border-bottom: 2px solid #2563EB;
+    padding-bottom: 6px;
+    margin-top: 0;
+  }
+  h2 {
+    font-size: 13.5px;
+    color: #0F172A;
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
+  h3 {
+    font-size: 12px;
+    color: #2563EB;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+  p {
+    margin: 4px 0 8px 0;
+    text-align: justify;
+  }
+  ul, ol {
+    margin: 4px 0 10px 18px;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 3px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 14px 0;
+    font-size: 10.5px;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 5px 7px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2563EB;
+    color: #ffffff;
+  }
+  tr:nth-child(even) td {
+    background: #f1f5f9;
+  }
+  .box {
+    background: #eff6ff;
+    border-left: 4px solid #2563EB;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  .box-accent {
+    background: #ecfeff;
+    border-left: 4px solid #06B6D4;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  .box-purple {
+    background: #f5f3ff;
+    border-left: 4px solid #8B5CF6;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  code {
+    background: #f1f5f9;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 10px;
+    color: #0F172A;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  .footer-note {
+    font-size: 9px;
+    color: #94a3b8;
+    margin-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+  }
+
+  /* Scene cards for the video script */
+  .scene {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin: 10px 0 16px 0;
+    overflow: hidden;
+  }
+  .scene-header {
+    background: #0F172A;
+    color: #ffffff;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  .scene-header .num {
+    display: inline-block;
+    background: #2563EB;
+    color: #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    font-size: 10px;
+    margin-right: 6px;
+  }
+  .scene-header .duree {
+    float: right;
+    color: #06B6D4;
+    font-size: 10px;
+  }
+  .scene-body {
+    padding: 8px 10px;
+  }
+  .scene-body h4 {
+    font-size: 10.5px;
+    color: #2563EB;
+    margin: 6px 0 2px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .scene-body p, .scene-body ul, .scene-body ol {
+    margin: 2px 0 6px 0;
+  }
+  .narration {
+    background: #f5f3ff;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-style: italic;
+    color: #334155;
+  }
+  .toc {
+    margin-top: 10px;
+  }
+  .toc li {
+    list-style: none;
+    margin-bottom: 4px;
+  }
+  .toc .num {
+    color: #2563EB;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <h1>INOV Business Agent</h1>
+  <h2>Guide d'utilisation complet (de A a Z)<br>&amp; script de video de presentation</h2>
+  <div class="badge">AI CHIEF OPERATING OFFICER POUR PME</div>
+  <div class="meta">
+    Document de preparation pour l'enregistrement de la video de demonstration<br>
+    Hackathon Microsoft Agents League &mdash; Categorie Enterprise Agents
+  </div>
+</div>
+
+<!-- SOMMAIRE -->
+<div class="page-break"></div>
+<h1 class="section">Sommaire</h1>
+<ul class="toc">
+  <li><span class="num">0.</span> Avant de commencer : acces, comptes de demonstration et pitch</li>
+  <li><span class="num">1.</span> Scene 1 &mdash; Accroche / page de connexion</li>
+  <li><span class="num">2.</span> Scene 2 &mdash; Tableau de bord (vue d'ensemble)</li>
+  <li><span class="num">3.</span> Scene 3 &mdash; Gestion des clients</li>
+  <li><span class="num">4.</span> Scene 4 &mdash; Gestion des factures</li>
+  <li><span class="num">5.</span> Scene 5 &mdash; Suivi des paiements</li>
+  <li><span class="num">6.</span> Scene 6 &mdash; Documents et recherche intelligente</li>
+  <li><span class="num">7.</span> Scene 7 &mdash; Chat IA, le coeur de l'agent</li>
+  <li><span class="num">8.</span> Scene 8 &mdash; Rapports intelligents et export PDF</li>
+  <li><span class="num">9.</span> Scene 9 &mdash; Prevision de tresorerie (cash flow)</li>
+  <li><span class="num">10.</span> Scene 10 &mdash; Alertes intelligentes</li>
+  <li><span class="num">11.</span> Scene 11 &mdash; Parametres et gestion d'equipe</li>
+  <li><span class="num">12.</span> Scene 12 &mdash; Conclusion et recapitulatif</li>
+  <li><span class="num">13.</span> Conseils techniques pour l'enregistrement</li>
+  <li><span class="num">14.</span> Checklist finale avant le tournage</li>
+</ul>
+
+<div class="box">
+  <strong>Duree totale estimee de la video :</strong> 6 a 9 minutes (en suivant les
+  scenes ci-dessous a un rythme naturel). Chaque scene indique une duree
+  approximative ; vous pouvez raccourcir en supprimant les scenes 9 a 11 si vous
+  avez besoin d'un format court (3-4 minutes).
+</div>
+
+<!-- SECTION 0 : AVANT DE COMMENCER -->
+<div class="page-break"></div>
+<h1 class="section">0. Avant de commencer</h1>
+
+<h2>0.1. Adresses d'acces</h2>
+<table>
+  <tr><th>Element</th><th>Adresse</th></tr>
+  <tr><td>Interface (frontend)</td><td><code>http://localhost:3000</code></td></tr>
+  <tr><td>API (backend)</td><td><code>http://localhost:8001/api</code></td></tr>
+</table>
+<p>
+  Assurez-vous que les deux serveurs sont demarres avant de commencer
+  l'enregistrement (backend Laravel sur le port 8001, frontend Next.js sur le
+  port 3000).
+</p>
+
+<h2>0.2. Comptes de demonstration ("United Apparts")</h2>
+<table>
+  <tr><th>Role</th><th>Email</th><th>Mot de passe</th><th>Usage recommande</th></tr>
+  <tr>
+    <td>Administrateur</td>
+    <td><code>admin@unitedapparts.com</code></td>
+    <td><code>password</code></td>
+    <td>Compte principal pour toute la demonstration (acces complet).</td>
+  </tr>
+  <tr>
+    <td>Manager</td>
+    <td><code>manager@unitedapparts.com</code></td>
+    <td><code>password</code></td>
+    <td>Optionnel : pour montrer les differences de droits d'acces.</td>
+  </tr>
+  <tr>
+    <td>Employe</td>
+    <td><code>employee@unitedapparts.com</code></td>
+    <td><code>password</code></td>
+    <td>Optionnel : pour montrer une interface restreinte.</td>
+  </tr>
+</table>
+
+<h2>0.3. Le pitch en 30 secondes (a dire en introduction ou en voix off)</h2>
+<div class="narration">
+  "INOV Business Agent est un assistant intelligent qui agit comme un Directeur
+  des Operations virtuel pour les petites et moyennes entreprises. Il centralise
+  la gestion des clients, des factures, des paiements et des documents, et
+  permet de poser des questions en langage naturel pour obtenir des reponses
+  instantanees basees sur les vraies donnees de l'entreprise : chiffre
+  d'affaires, factures en retard, previsions de tresorerie, contrats a
+  renouveler... Decouvrons cela avec l'entreprise de demonstration 'United
+  Apparts'."
+</div>
+
+<h2>0.4. Donnees cles de l'entreprise de demonstration (a connaitre pendant l'enregistrement)</h2>
+<table>
+  <tr><th>Donnee</th><th>Valeur approximative</th></tr>
+  <tr><td>Chiffre d'affaires ce mois-ci</td><td>~ 43 665 (vs ~ 45 130 le mois precedent)</td></tr>
+  <tr><td>Chiffre d'affaires cumule (annee)</td><td>~ 206 988</td></tr>
+  <tr><td>Factures impayees</td><td>9 factures, total ~ 51 417</td></tr>
+  <tr><td>Factures en retard</td><td>7 factures, total ~ 35 791</td></tr>
+  <tr><td>Nombre de clients</td><td>10 clients (10 nouveaux ce mois)</td></tr>
+  <tr><td>Document arrivant a expiration</td><td>"Warehouse Lease Agreement" (contrat de bail), dans moins de 3 semaines</td></tr>
+</table>
+<p>
+  Ces chiffres evoluent legerement dans le temps (les dates de la base de
+  demonstration sont relatives a aujourd'hui), mais les ordres de grandeur et
+  le scenario restent les memes : un mois en leger recul, plusieurs factures
+  en retard, un contrat a renouveler bientot.
+</p>
+
+<!-- SCENE 1 -->
+<div class="page-break"></div>
+<h1 class="section">Scenario de demonstration, scene par scene</h1>
+
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">1</span> Accroche et page de connexion
+    <span class="duree">~ 30 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Presenter rapidement le projet et montrer l'ecran de connexion (theme sombre,
+    inspire de Microsoft Copilot).</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Ouvrir <code>http://localhost:3000</code> &rarr; redirection automatique vers
+          <code>/login</code>.</li>
+      <li>Montrer le formulaire de connexion (email / mot de passe).</li>
+      <li>Saisir <code>admin@unitedapparts.com</code> / <code>password</code> et cliquer
+          sur "Se connecter".</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "Voici l'ecran de connexion d'INOV Business Agent, avec son theme sombre
+      moderne. Je me connecte avec le compte administrateur de l'entreprise de
+      demonstration, 'United Apparts', un grossiste en pret-a-porter."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 2 -->
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">2</span> Tableau de bord &mdash; vue d'ensemble
+    <span class="duree">~ 60 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Montrer en un coup d'oeil la sante financiere de l'entreprise et l'interface
+    generale (sidebar, topbar).</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Apres connexion, on arrive sur <code>/dashboard</code>.</li>
+      <li>Parcourir les 4 cartes de synthese : Chiffre d'affaires, Factures
+          impayees, Clients, Profit.</li>
+      <li>Montrer les graphiques : evolution du chiffre d'affaires, repartition
+          des factures par statut, flux de tresorerie.</li>
+      <li>Montrer le panneau des <strong>alertes intelligentes</strong> (facture en
+          retard + document qui expire bientot).</li>
+      <li>Survoler rapidement la barre laterale (sidebar) pour montrer tous les
+          modules disponibles.</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "Le tableau de bord est le centre de pilotage de l'entreprise. En un coup
+      d'oeil, je vois mon chiffre d'affaires du mois, mes factures impayees,
+      le nombre de clients et l'evolution de ma tresorerie. En bas, les alertes
+      intelligentes me signalent automatiquement les points a surveiller : ici,
+      des factures en retard de paiement et un contrat qui arrive a expiration."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 3 -->
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">3</span> Gestion des clients
+    <span class="duree">~ 40 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Montrer le module CRM simplifie : liste, recherche, creation/edition.</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Aller sur <code>/customers</code>.</li>
+      <li>Montrer la liste des 10 clients (nom, email, telephone, nombre de
+          factures).</li>
+      <li>Utiliser la barre de recherche pour filtrer (ex: taper "Fashion").</li>
+      <li>Cliquer sur "Nouveau client", montrer le formulaire, puis l'annuler ou
+          creer un client de demonstration.</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "La section Clients centralise toutes les informations de contact. Je peux
+      rechercher un client instantanement, ou en ajouter un nouveau via ce
+      formulaire simple."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 4 -->
+<div class="page-break"></div>
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">4</span> Gestion des factures
+    <span class="duree">~ 50 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Montrer le suivi des factures et leurs statuts (en attente / payee / en
+    retard).</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Aller sur <code>/invoices</code>.</li>
+      <li>Montrer le tableau des factures avec les badges de statut colores.</li>
+      <li>Filtrer sur le statut "En retard" pour montrer les 7 factures en
+          retard.</li>
+      <li>Ouvrir une facture en retard et montrer l'action "Marquer comme
+          payee" (sans forcement valider, ou valider pour la demo suivante).</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "Chaque facture est suivie automatiquement : en attente, payee ou en
+      retard. En filtrant sur 'En retard', je vois immediatement les 7 factures
+      qui necessitent une relance, pour un total d'environ 35 800."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 5 -->
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">5</span> Suivi des paiements
+    <span class="duree">~ 30 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Montrer l'enregistrement d'un paiement et son impact immediat sur le
+    solde de la facture.</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Aller sur <code>/payments</code>.</li>
+      <li>Montrer l'historique des paiements (client, facture, montant, date,
+          methode).</li>
+      <li>Cliquer sur "Enregistrer un paiement", choisir une facture en attente,
+          saisir un montant, valider.</li>
+      <li>Repasser sur <code>/invoices</code> pour montrer que le statut de la
+          facture a change.</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "Lorsque je recois un paiement, je l'enregistre ici en quelques clics. Le
+      solde restant et le statut de la facture sont mis a jour automatiquement
+      &mdash; plus besoin de recalculer manuellement."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 6 -->
+<div class="page-break"></div>
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">6</span> Documents et recherche intelligente
+    <span class="duree">~ 40 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Montrer le stockage des documents (contrats, licences...) avec dates
+    d'expiration et recherche.</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Aller sur <code>/documents</code>.</li>
+      <li>Montrer la liste : "Warehouse Lease Agreement" (categorie "contract",
+          expire bientot), "Supplier Agreement - TextilePro Mills",
+          "Business Operating License", "Q1 Financial Statement".</li>
+      <li>Utiliser la barre de recherche pour trouver un document par mot-cle.</li>
+      <li>(Optionnel) Glisser-deposer un nouveau fichier pour montrer l'upload.</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "Tous les documents importants de l'entreprise &mdash; contrats, licences,
+      rapports financiers &mdash; sont centralises ici, avec leur date
+      d'expiration le cas echeant. On retrouve par exemple le bail de l'entrepot,
+      qui arrive justement a expiration dans quelques jours."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 7 -->
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">7</span> Chat IA &mdash; le coeur de l'agent
+    <span class="duree">~ 90 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>C'est la scene la plus importante : montrer l'assistant conversationnel qui
+    repond avec les vraies donnees de l'entreprise.</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Aller sur <code>/ai-chat</code>.</li>
+      <li>Montrer les suggestions de questions affichees a l'ecran d'accueil.</li>
+      <li>Poser successivement les 4 questions ci-dessous (une par une, en
+          laissant le temps a la reponse de s'afficher).</li>
+    </ol>
+
+    <h4>Questions a poser et reponses attendues</h4>
+    <table>
+      <tr><th>Question posee</th><th>Reponse attendue (resume)</th></tr>
+      <tr>
+        <td>"Quel est notre chiffre d'affaires ce mois-ci ?"</td>
+        <td>Chiffre d'affaires du mois (~43 665) compare au mois precedent
+            (~45 130) et au cumul annuel (~206 988).</td>
+      </tr>
+      <tr>
+        <td>"Quelles factures sont en retard ?"</td>
+        <td>9 factures impayees pour ~51 417, dont 7 en retard pour ~35 791.</td>
+      </tr>
+      <tr>
+        <td>"Avons-nous des contrats qui arrivent a expiration ?"</td>
+        <td>Mentionne le "Warehouse Lease Agreement" avec sa date et le nombre de
+            jours restants.</td>
+      </tr>
+      <tr>
+        <td>"Combien de clients avons-nous ?"</td>
+        <td>10 clients au total, dont 10 nouveaux ce mois-ci.</td>
+      </tr>
+    </table>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "C'est ici que la magie opere : je pose mes questions en langage naturel,
+      comme je le ferais a un assistant humain. [Poser la question 1] ... L'agent
+      analyse mes donnees reelles et me repond instantanement, avec les chiffres
+      exacts. [Poser la question 2, puis 3, puis 4] ... Que ce soit pour la
+      tresorerie, les retards de paiement ou les echeances de contrats, j'ai une
+      reponse immediate, sans avoir a chercher dans des tableaux Excel."
+    </div>
+
+    <div class="box-purple">
+      <strong>Astuce demo :</strong> ouvrir une <strong>nouvelle conversation</strong>
+      pour chaque theme si vous voulez des reponses bien isolees, ou enchainer
+      les 4 questions dans la meme conversation pour montrer l'historique
+      conserve dans la barre laterale.
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 8 -->
+<div class="page-break"></div>
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">8</span> Rapports intelligents et export PDF
+    <span class="duree">~ 50 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Montrer la generation automatique de rapports avec resume redige par
+    l'IA, et l'export PDF.</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Aller sur <code>/reports</code>, onglet "Reports".</li>
+      <li>Cliquer sur "Generer un rapport", choisir le type "Mensuel", valider.</li>
+      <li>Ouvrir le rapport genere : montrer le resume IA, puis le detail
+          (revenus, clients, factures impayees).</li>
+      <li>Cliquer sur "Telecharger" pour exporter le rapport en PDF.</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "Plutot que de compiler des chiffres a la main chaque mois, je genere un
+      rapport en un clic. L'IA redige automatiquement un resume de la periode,
+      avec les points cles : revenus encaisses, nouveaux clients, factures en
+      attente. Et bien sur, je peux exporter ce rapport en PDF pour le partager
+      avec mes associes ou mon comptable."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 9 -->
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">9</span> Prevision de tresorerie (Cash Flow Forecast)
+    <span class="duree">~ 40 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Montrer la projection des revenus futurs et les risques identifies.</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Toujours sur <code>/reports</code>, basculer sur l'onglet "Cash Flow
+          Forecast".</li>
+      <li>Montrer le graphique combinant historique (traits pleins) et
+          projection (traits pointilles).</li>
+      <li>Montrer le texte de narration IA sous le graphique.</li>
+      <li>Montrer la section "Risques &amp; alertes" (ex: les 7 factures en
+          retard representant un risque sur la tresorerie).</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "Au-dela du present, l'agent projette aussi l'avenir : voici la previsions
+      de mon chiffre d'affaires pour les prochains mois, basee sur l'historique
+      et les factures en attente d'encaissement. L'IA identifie egalement les
+      risques, comme l'impact potentiel des factures en retard sur ma
+      tresorerie."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 10 -->
+<div class="page-break"></div>
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">10</span> Alertes intelligentes
+    <span class="duree">~ 25 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Revenir brievement sur les alertes pour montrer leur role proactif.</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Revenir sur <code>/dashboard</code> ou utiliser l'icone de
+          notifications dans la barre superieure.</li>
+      <li>Montrer la liste des alertes avec leur niveau de severite (critique /
+          avertissement).</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "L'agent ne se contente pas de repondre aux questions : il surveille en
+      permanence l'activite et m'alerte de lui-meme dès qu'un point necessite
+      mon attention, comme une facture en retard ou un contrat a renouveler."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 11 -->
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">11</span> Parametres et gestion d'equipe
+    <span class="duree">~ 35 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Montrer la gestion de l'entreprise et des roles utilisateurs (vision
+    multi-utilisateurs).</p>
+
+    <h4>A l'ecran</h4>
+    <ol>
+      <li>Aller sur <code>/settings</code>.</li>
+      <li>Montrer le profil de l'entreprise (nom, secteur, logo).</li>
+      <li>Montrer la liste de l'equipe (administrateur, manager, employe) et
+          leurs roles respectifs.</li>
+      <li>(Optionnel) Montrer le formulaire d'ajout d'un nouveau membre.</li>
+    </ol>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "Enfin, la plateforme est concue pour toute l'equipe : chaque membre a un
+      role &mdash; administrateur, manager ou employe &mdash; qui determine ses
+      droits d'acces. L'administrateur peut gerer le profil de l'entreprise et
+      l'equipe directement depuis cette page."
+    </div>
+  </div>
+</div>
+
+<!-- SCENE 12 -->
+<div class="scene">
+  <div class="scene-header">
+    <span class="num">12</span> Conclusion et recapitulatif
+    <span class="duree">~ 30 sec</span>
+  </div>
+  <div class="scene-body">
+    <h4>Objectif</h4>
+    <p>Terminer sur une note forte, en rappelant la valeur ajoutee.</p>
+
+    <h4>Texte suggere</h4>
+    <div class="narration">
+      "En resume, INOV Business Agent reunit en une seule plateforme la gestion
+      quotidienne &mdash; clients, factures, paiements, documents &mdash; et un
+      assistant IA capable d'analyser ces donnees pour repondre aux questions,
+      generer des rapports, anticiper la tresorerie et alerter proactivement.
+      C'est un veritable Directeur des Operations virtuel, disponible 24h/24,
+      pour aider les PME a piloter leur activite avec confiance."
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 13 : CONSEILS TECHNIQUES -->
+<div class="page-break"></div>
+<h1 class="section">13. Conseils techniques pour l'enregistrement</h1>
+
+<h2>13.1. Outils recommandes</h2>
+<ul>
+  <li><strong>OBS Studio</strong> (gratuit) pour l'enregistrement d'ecran et la
+      voix simultanee.</li>
+  <li>Resolution recommandee : <strong>1920x1080</strong> (Full HD), navigateur
+      en plein ecran.</li>
+  <li>Fermer les onglets/applications inutiles pour eviter les notifications
+      pendant l'enregistrement.</li>
+</ul>
+
+<h2>13.2. Avant de lancer l'enregistrement</h2>
+<ul>
+  <li>Verifier que les serveurs backend (port 8001) et frontend (port 3000)
+      sont demarres et accessibles.</li>
+  <li>Se deconnecter puis se reconnecter une fois pour verifier que la
+      connexion fonctionne sans erreur.</li>
+  <li>Augmenter le zoom du navigateur si le texte est trop petit a l'ecran
+      (Ctrl + "+").</li>
+  <li>Preparer les 4 questions du Chat IA dans un bloc-notes pour les copier-
+      coller rapidement (eviter les fautes de frappe en direct).</li>
+</ul>
+
+<h2>13.3. Pendant l'enregistrement</h2>
+<ul>
+  <li>Parler lentement et marquer une pause apres chaque question posee a
+      l'IA, le temps que la reponse s'affiche.</li>
+  <li>Deplacer la souris de maniere fluide, eviter les clics multiples
+      rapides.</li>
+  <li>Si une etape echoue (ex: page qui met du temps a charger), refaire
+      simplement la prise pour cette scene &mdash; il est plus facile de monter
+      plusieurs courtes sequences que de tout refaire.</li>
+</ul>
+
+<h2>13.4. Montage</h2>
+<ul>
+  <li>Decouper la video en segments correspondant aux scenes ci-dessus
+      facilite le montage et permet de respecter le minutage cible.</li>
+  <li>Ajouter des transitions courtes (fondu) entre les scenes pour un rendu
+      professionnel.</li>
+  <li>Ajouter le logo / nom du projet en incrustation (coin de l'ecran)
+      pendant toute la duree.</li>
+</ul>
+
+<!-- SECTION 14 : CHECKLIST -->
+<div class="page-break"></div>
+<h1 class="section">14. Checklist finale avant le tournage</h1>
+
+<table>
+  <tr><th>#</th><th>Verification</th><th>Fait</th></tr>
+  <tr><td>1</td><td>Backend Laravel demarre sur le port 8001</td><td>&#9633;</td></tr>
+  <tr><td>2</td><td>Frontend Next.js demarre sur le port 3000</td><td>&#9633;</td></tr>
+  <tr><td>3</td><td>Connexion testee avec <code>admin@unitedapparts.com</code></td><td>&#9633;</td></tr>
+  <tr><td>4</td><td>Theme sombre affiche correctement (pas de page sans style)</td><td>&#9633;</td></tr>
+  <tr><td>5</td><td>Tableau de bord affiche des chiffres et graphiques</td><td>&#9633;</td></tr>
+  <tr><td>6</td><td>Les 4 questions du Chat IA preparees et testees une fois</td><td>&#9633;</td></tr>
+  <tr><td>7</td><td>Un rapport mensuel genere au moins une fois (pour eviter un
+      premier essai en direct)</td><td>&#9633;</td></tr>
+  <tr><td>8</td><td>Onglet "Cash Flow Forecast" verifie (graphique + risques
+      affiches)</td><td>&#9633;</td></tr>
+  <tr><td>9</td><td>OBS (ou autre outil) configure : ecran + micro</td><td>&#9633;</td></tr>
+  <tr><td>10</td><td>Notifications systeme desactivees pendant l'enregistrement</td><td>&#9633;</td></tr>
+</table>
+
+<div class="box">
+  <strong>Conseil final :</strong> faites un premier enregistrement "a blanc"
+  (sans garder le resultat) pour vous chronometrer et verifier que toutes les
+  pages repondent rapidement. Cela evite les mauvaises surprises lors de la
+  prise definitive.
+</div>
+
+<div class="footer-note">
+  Document genere automatiquement par l'assistant de developpement &mdash;
+  INOV Business Agent (projet hackathon). Guide d'utilisation et script de
+  presentation video.
+</div>
+
+</body>
+</html>

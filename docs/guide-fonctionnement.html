@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    margin: 60px 50px;
+  }
+  body {
+    font-family: "DejaVu Sans", sans-serif;
+    color: #1e293b;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .cover {
+    text-align: center;
+    padding-top: 160px;
+  }
+  .cover h1 {
+    font-size: 32px;
+    color: #2563EB;
+    margin-bottom: 8px;
+  }
+  .cover h2 {
+    font-size: 16px;
+    color: #475569;
+    font-weight: normal;
+    margin-top: 0;
+  }
+  .cover .badge {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 8px 20px;
+    background: #0F172A;
+    color: #06B6D4;
+    border-radius: 6px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .cover .meta {
+    margin-top: 200px;
+    font-size: 10px;
+    color: #94a3b8;
+  }
+  h1.section {
+    font-size: 20px;
+    color: #2563EB;
+    border-bottom: 2px solid #2563EB;
+    padding-bottom: 6px;
+    margin-top: 0;
+  }
+  h2 {
+    font-size: 14px;
+    color: #0F172A;
+    margin-top: 18px;
+    margin-bottom: 6px;
+  }
+  h3 {
+    font-size: 12px;
+    color: #2563EB;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+  p {
+    margin: 4px 0 8px 0;
+    text-align: justify;
+  }
+  ul, ol {
+    margin: 4px 0 10px 18px;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 3px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 14px 0;
+    font-size: 11px;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 5px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: #2563EB;
+    color: #ffffff;
+  }
+  tr:nth-child(even) td {
+    background: #f1f5f9;
+  }
+  .box {
+    background: #eff6ff;
+    border-left: 4px solid #2563EB;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  .box-accent {
+    background: #ecfeff;
+    border-left: 4px solid #06B6D4;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  .box-purple {
+    background: #f5f3ff;
+    border-left: 4px solid #8B5CF6;
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  code {
+    background: #f1f5f9;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 10.5px;
+    color: #0F172A;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+  .footer-note {
+    font-size: 9px;
+    color: #94a3b8;
+    margin-top: 30px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <h1>INOV Business Agent</h1>
+  <h2>Guide de fonctionnement &mdash; Comment ca marche</h2>
+  <div class="badge">AI CHIEF OPERATING OFFICER POUR PME</div>
+  <div class="meta">
+    Document genere automatiquement &mdash; Hackathon Microsoft Agents League<br>
+    Categorie : Enterprise Agents
+  </div>
+</div>
+
+<!-- PAGE 1 : VUE D'ENSEMBLE -->
+<div class="page-break"></div>
+<h1 class="section">1. Vue d'ensemble</h1>
+<p>
+  <strong>INOV Business Agent</strong> est un assistant intelligent qui joue le role d'un
+  "Directeur des Operations (COO) virtuel" pour les petites et moyennes entreprises (PME).
+  Il centralise la gestion des clients, des factures, des paiements et des documents,
+  tout en s'appuyant sur l'intelligence artificielle pour repondre aux questions du
+  dirigeant, generer des rapports, anticiper la tresorerie et signaler les points
+  d'attention.
+</p>
+
+<div class="box">
+  <strong>En une phrase :</strong> l'application combine une base de donnees
+  d'entreprise (clients, factures, paiements, documents) avec un agent conversationnel
+  capable d'analyser ces donnees en temps reel et de repondre en langage naturel.
+</div>
+
+<h2>1.1. Les deux grandes parties de l'application</h2>
+<table>
+  <tr><th>Partie</th><th>Technologie</th><th>Role</th></tr>
+  <tr>
+    <td><strong>Backend (API)</strong></td>
+    <td>Laravel 12 (PHP) + MySQL</td>
+    <td>Stocke les donnees, applique les regles metier, expose une API securisee,
+        contient la logique d'intelligence artificielle (avec ou sans Azure).</td>
+  </tr>
+  <tr>
+    <td><strong>Frontend (interface)</strong></td>
+    <td>Next.js 15 (React/TypeScript)</td>
+    <td>Interface web moderne (theme sombre inspire de Microsoft Copilot) avec
+        tableaux de bord, formulaires, graphiques et chat IA.</td>
+  </tr>
+</table>
+
+<p>
+  Les deux parties communiquent via une API web (HTTP/JSON) : le frontend
+  envoie des requetes, le backend repond avec des donnees au format JSON.
+</p>
+
+<!-- PAGE 2 : AUTHENTIFICATION -->
+<div class="page-break"></div>
+<h1 class="section">2. Connexion et securite</h1>
+
+<h2>2.1. Comment fonctionne la connexion ?</h2>
+<ol>
+  <li>L'utilisateur saisit son email et son mot de passe sur la page de connexion.</li>
+  <li>Le frontend envoie ces informations au backend (<code>POST /api/login</code>).</li>
+  <li>Le backend verifie les identifiants et renvoie un <strong>jeton d'acces</strong>
+      (token) unique, propre a cet utilisateur.</li>
+  <li>Ce jeton est conserve dans un cookie du navigateur.</li>
+  <li>A chaque action suivante (consulter les clients, creer une facture, etc.), le
+      frontend joint automatiquement ce jeton a la requete pour prouver l'identite
+      de l'utilisateur.</li>
+</ol>
+
+<div class="box-accent">
+  Cette technologie s'appelle <strong>Laravel Sanctum</strong>. Elle permet une
+  authentification simple et securisee, sans avoir besoin de renvoyer le mot de
+  passe a chaque requete.
+</div>
+
+<h2>2.2. Gestion des roles et permissions</h2>
+<p>
+  Chaque utilisateur appartient a une entreprise et possede un role qui determine
+  ce qu'il peut voir et faire :
+</p>
+<table>
+  <tr><th>Role</th><th>Acces</th></tr>
+  <tr>
+    <td><strong>Administrateur</strong></td>
+    <td>Acces complet : gestion de l'entreprise, des utilisateurs, suppression
+        de donnees, parametres.</td>
+  </tr>
+  <tr>
+    <td><strong>Manager</strong></td>
+    <td>Acces a la quasi-totalite des fonctionnalites (clients, factures,
+        paiements, documents, rapports), sans gestion des utilisateurs.</td>
+  </tr>
+  <tr>
+    <td><strong>Employe</strong></td>
+    <td>Acces en consultation et saisie courante, sans actions sensibles
+        (suppression, parametres de l'entreprise).</td>
+  </tr>
+</table>
+<p>
+  L'interface s'adapte automatiquement : les boutons et menus reserves aux
+  administrateurs/managers sont masques pour les employes.
+</p>
+
+<!-- PAGE 3 : MODULES -->
+<div class="page-break"></div>
+<h1 class="section">3. Les modules de l'application</h1>
+
+<h2>3.1. Tableau de bord (Dashboard)</h2>
+<p>
+  Page d'accueil apres connexion. Elle affiche en un coup d'oeil :
+</p>
+<ul>
+  <li>Le <strong>chiffre d'affaires</strong> du mois (compare au mois precedent et
+      au cumul annuel) ;</li>
+  <li>Le montant total des <strong>factures impayees</strong> et en retard ;</li>
+  <li>Le nombre de <strong>clients</strong> (et les nouveaux clients du mois) ;</li>
+  <li>Des graphiques d'evolution (chiffre d'affaires, statut des factures,
+      flux de tresorerie) ;</li>
+  <li>Les <strong>alertes intelligentes</strong> (factures en retard, documents
+      qui arrivent a expiration) ;</li>
+  <li>L'activite recente (dernieres factures et paiements).</li>
+</ul>
+
+<h2>3.2. Clients</h2>
+<p>
+  Carnet d'adresses des clients de l'entreprise : nom, email, telephone, adresse,
+  nombre de factures associees. Permet de creer, modifier, rechercher et
+  supprimer des fiches clients.
+</p>
+
+<h2>3.3. Factures</h2>
+<p>
+  Liste de toutes les factures emises, avec leur statut :
+</p>
+<ul>
+  <li><strong>En attente</strong> (pending) : facture emise, en attente de paiement ;</li>
+  <li><strong>Payee</strong> (paid) : facture entierement reglee ;</li>
+  <li><strong>En retard</strong> (overdue) : date d'echeance depassee, non payee.</li>
+</ul>
+<p>
+  Il est possible de filtrer par statut, de creer/modifier une facture, et de la
+  marquer comme payee.
+</p>
+
+<h2>3.4. Paiements</h2>
+<p>
+  Historique des paiements recus. Lorsqu'un paiement est enregistre pour une
+  facture, le montant restant du (solde) et le statut de la facture sont
+  recalcules automatiquement.
+</p>
+
+<h2>3.5. Documents</h2>
+<p>
+  Espace de stockage des documents de l'entreprise (contrats, factures
+  fournisseurs, licences, etc.). Chaque document peut avoir :
+</p>
+<ul>
+  <li>Une <strong>categorie</strong> (contrat, juridique, financier, ...) ;</li>
+  <li>Une <strong>date d'expiration</strong> (utile pour les contrats a
+      renouveler) ;</li>
+  <li>Une fonction de <strong>recherche</strong> par mot-cle.</li>
+</ul>
+
+<!-- PAGE 4 : IA + RAPPORTS -->
+<div class="page-break"></div>
+<h1 class="section">4. L'intelligence artificielle au coeur de l'agent</h1>
+
+<h2>4.1. Le Chat IA</h2>
+<p>
+  C'est le coeur de "l'agent" : une conversation en langage naturel avec
+  l'assistant, qui repond en s'appuyant sur les <strong>vraies donnees</strong>
+  de l'entreprise. Exemples de questions :
+</p>
+<ul>
+  <li>"Quel est notre chiffre d'affaires ce mois-ci ?"</li>
+  <li>"Quelles factures sont en retard de paiement ?"</li>
+  <li>"Avons-nous des contrats qui arrivent a expiration ?"</li>
+  <li>"Combien de clients avons-nous ?"</li>
+</ul>
+
+<h3>Comment l'assistant construit sa reponse</h3>
+<ol>
+  <li>Le message de l'utilisateur est analyse pour detecter les <strong>themes
+      abordes</strong> (chiffre d'affaires, factures impayees, clients,
+      previsions, documents/contrats...).</li>
+  <li>Selon les themes detectes, l'application interroge la base de donnees pour
+      recuperer les <strong>chiffres reels</strong> correspondants (revenus,
+      factures en retard, statistiques clients, documents qui expirent bientot...).</li>
+  <li>Ces donnees sont transmises a un moteur d'IA qui redige une reponse claire,
+      en citant les chiffres et en proposant une action si besoin.</li>
+</ol>
+
+<div class="box-purple">
+  <strong>Architecture "branchable" (pluggable) :</strong> si une cle Azure
+  OpenAI est configuree, c'est <strong>Azure OpenAI</strong> qui redige la
+  reponse (langage naturel avance). Si aucune cle n'est configuree, un moteur
+  local genere une reponse claire a partir des memes donnees (modeles de
+  phrases pre-ecrits). Le fonctionnement reste identique pour l'utilisateur,
+  avec ou sans connexion a Azure.
+</div>
+
+<h2>4.2. Rapports intelligents</h2>
+<p>
+  Generation de rapports periodiques (journalier, hebdomadaire, mensuel,
+  trimestriel) qui resument l'activite : chiffre d'affaires encaisse,
+  nouvelles factures emises, nouveaux clients, creances impayees, top
+  clients... Chaque rapport est accompagne d'un <strong>resume redige par
+  l'IA</strong> et peut etre <strong>telecharge en PDF</strong>.
+</p>
+
+<h2>4.3. Prevision de tresorerie (Cash Flow Forecast)</h2>
+<p>
+  A partir de l'historique des revenus et des factures en attente, l'application
+  projette les revenus des prochains mois et identifie les <strong>risques</strong>
+  (par exemple : "7 factures en retard representant 35 791 dans les creances
+  non recouvrees"). Un graphique combine l'historique reel et la projection.
+</p>
+
+<h2>4.4. Alertes intelligentes</h2>
+<p>
+  Un mecanisme automatique surveille en permanence la situation de l'entreprise et
+  cree des alertes, par exemple :
+</p>
+<ul>
+  <li>Factures en retard de paiement (severite "critique") ;</li>
+  <li>Documents/contrats arrivant a expiration dans les 30 jours (severite
+      "avertissement").</li>
+</ul>
+<p>Ces alertes apparaissent sur le tableau de bord et dans une page dediee.</p>
+
+<!-- PAGE 5 : DONNEES + PARAMETRES + RESUME -->
+<div class="page-break"></div>
+<h1 class="section">5. Parametres de l'entreprise</h1>
+<p>
+  La page Parametres permet (selon le role) de :
+</p>
+<ul>
+  <li>Modifier le profil de l'entreprise (nom, secteur d'activite, logo) ;</li>
+  <li>Consulter ses informations de compte (nom, email, role) ;</li>
+  <li>Gerer l'equipe : ajouter, modifier le role ou retirer des membres
+      (reserve aux administrateurs/managers).</li>
+</ul>
+
+<h1 class="section">6. Donnees de demonstration</h1>
+<p>
+  Pour permettre de tester immediatement toutes les fonctionnalites, l'application
+  est livree avec une entreprise fictive : <strong>"United Apparts"</strong>
+  (grossiste en pret-a-porter), comprenant :
+</p>
+<ul>
+  <li>3 utilisateurs (un administrateur, un manager, un employe) ;</li>
+  <li>10 clients (boutiques de mode) ;</li>
+  <li>Une quarantaine de factures, avec des statuts varies (payees, en
+      attente, en retard) ;</li>
+  <li>Les paiements correspondants ;</li>
+  <li>4 documents types, dont un contrat de bail arrivant a expiration dans
+      environ 17 jours &mdash; ce qui permet de tester en direct la question
+      "Avons-nous des contrats qui arrivent a expiration ?".</li>
+</ul>
+
+<h1 class="section">7. En resume</h1>
+<div class="box">
+  <p style="margin:0;">
+    INOV Business Agent transforme des donnees comptables et administratives
+    brutes (clients, factures, paiements, documents) en <strong>informations
+    exploitables</strong> : tableaux de bord visuels, rapports automatiques,
+    previsions de tresorerie, alertes proactives, et surtout un assistant
+    conversationnel capable de repondre instantanement aux questions du
+    dirigeant &mdash; comme un veritable Directeur des Operations disponible
+    24h/24.
+  </p>
+</div>
+
+<div class="footer-note">
+  Document genere automatiquement par l'assistant de developpement &mdash;
+  INOV Business Agent (projet hackathon).
+</div>
+
+</body>
+</html>
